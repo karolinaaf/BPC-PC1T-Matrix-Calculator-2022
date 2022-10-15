@@ -39,7 +39,7 @@ include CMakeFiles\rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:\Dev\MaticovaKalkulacka\out\build\x64-debug\
+cmake_ninja_workdir = C$:\Dev\test\BPC-PC1T-Matrix-Calculator-2022\out\build\x64-debug\
 # =============================================================================
 # Object build statements for EXECUTABLE target MaticovaKalkulacka
 
@@ -49,7 +49,7 @@ cmake_ninja_workdir = C$:\Dev\MaticovaKalkulacka\out\build\x64-debug\
 
 build cmake_object_order_depends_target_MaticovaKalkulacka: phony || CMakeFiles\MaticovaKalkulacka.dir
 
-build CMakeFiles\MaticovaKalkulacka.dir\MaticovaKalkulacka.cpp.obj: CXX_COMPILER__MaticovaKalkulacka_Debug C$:\Dev\MaticovaKalkulacka\MaticovaKalkulacka.cpp || cmake_object_order_depends_target_MaticovaKalkulacka
+build CMakeFiles\MaticovaKalkulacka.dir\MaticovaKalkulacka.cpp.obj: CXX_COMPILER__MaticovaKalkulacka_Debug C$:\Dev\test\BPC-PC1T-Matrix-Calculator-2022\MaticovaKalkulacka.cpp || cmake_object_order_depends_target_MaticovaKalkulacka
   FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++20
   OBJECT_DIR = CMakeFiles\MaticovaKalkulacka.dir
   OBJECT_FILE_DIR = CMakeFiles\MaticovaKalkulacka.dir
@@ -81,7 +81,7 @@ build MaticovaKalkulacka.exe: CXX_EXECUTABLE_LINKER__MaticovaKalkulacka_Debug CM
 # Utility command for edit_cache
 
 build CMakeFiles\edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Dev\MaticovaKalkulacka\out\build\x64-debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D C:\Dev\test\BPC-PC1T-Matrix-Calculator-2022\out\build\x64-debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -92,7 +92,7 @@ build edit_cache: phony CMakeFiles\edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles\rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Dev\MaticovaKalkulacka\out\build\x64-debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SC:\Dev\MaticovaKalkulacka -BC:\Dev\MaticovaKalkulacka\out\build\x64-debug"
+  COMMAND = cmd.exe /C "cd /D C:\Dev\test\BPC-PC1T-Matrix-Calculator-2022\out\build\x64-debug && "C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" --regenerate-during-build -SC:\Dev\test\BPC-PC1T-Matrix-Calculator-2022 -BC:\Dev\test\BPC-PC1T-Matrix-Calculator-2022\out\build\x64-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -110,7 +110,7 @@ build MaticovaKalkulacka: phony MaticovaKalkulacka.exe
 # =============================================================================
 
 #############################################
-# Folder: C:/Dev/MaticovaKalkulacka/out/build/x64-debug
+# Folder: C:/Dev/test/BPC-PC1T-Matrix-Calculator-2022/out/build/x64-debug
 
 build all: phony MaticovaKalkulacka.exe
 

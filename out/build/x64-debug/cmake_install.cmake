@@ -1,8 +1,8 @@
-# Install script for directory: C:/Dev/MaticovaKalkulacka
+# Install script for directory: C:/Dev/test/BPC-PC1T-Matrix-Calculator-2022
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Dev/MaticovaKalkulacka/out/install/x64-debug")
+  set(CMAKE_INSTALL_PREFIX "C:/Dev/test/BPC-PC1T-Matrix-Calculator-2022/out/install/x64-debug")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Dev/MaticovaKalkulacka/out/build/x64-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Dev/test/BPC-PC1T-Matrix-Calculator-2022/out/build/x64-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

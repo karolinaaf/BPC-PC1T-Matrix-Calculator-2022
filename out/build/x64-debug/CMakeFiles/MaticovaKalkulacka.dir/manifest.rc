@@ -1,2 +1,2 @@
 #pragma code_page(65001)
-1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "C:/Dev/MaticovaKalkulacka/out/build/x64-debug/CMakeFiles/MaticovaKalkulacka.dir/embed.manifest"
+1 /* CREATEPROCESS_MANIFEST_RESOURCE_ID */ 24 /* RT_MANIFEST */ "C:/Dev/test/BPC-PC1T-Matrix-Calculator-2022/out/build/x64-debug/CMakeFiles/MaticovaKalkulacka.dir/embed.manifest"
