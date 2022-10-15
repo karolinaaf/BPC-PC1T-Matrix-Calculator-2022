@@ -8,5 +8,8 @@ using namespace std;
 int main()
 {
 	cout << "Hello CMake." << endl;
+
+	printf("Hello GitHub.\n");
+
 	return 0;
 }
