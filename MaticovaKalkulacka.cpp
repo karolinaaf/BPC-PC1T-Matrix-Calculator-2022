@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-	cout << "Hello CMake." << endl;
+	printf("dadwda \n");
 
 	printf("Hello GitHub.\n");
 
