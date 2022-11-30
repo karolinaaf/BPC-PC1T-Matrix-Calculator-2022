@@ -4,27 +4,19 @@
 #include "MaticovaKalkulacka.h"
 #include "input.h"
 
-using namespace std;
+typedef struct Matice {
+	int sloupce, radky;
+	double data[];
+} Matice;
 
-int main()
-{
-	struct Matice {
-		int sloupce, radky;
-		double* data;
-	};
-	FILE* fr, * fw;
+int main() {
+	Matice* mat = readMatrix();
 
-	char fileName[64];
-	char inputFilePath[] = "D://";
-	printf("Zadejte nazev souboru:");
-	scanf("%64s", fileName);
-	strcat(inputFilePath, fileName);
-	if ((fr = fopen(inputFilePath, "r")) == NULL) {
-		printf("Chyba pri otevirani %s\n", inputFilePath);
-		return 0;
+	printf("Matice:\n");
+	for (int i = 0; i < mat->sloupce * mat->radky; i++) {
+		printf("%.1lf ", mat->data[i]);
 	}
 
-	if (fclose(fr) == EOF) printf("Chyba pri zavirani %s\n", inputFilePath);
-	if (fclose(fw) == EOF) printf("Chyba pri zavirani souboru.\n");
+	free(mat);
 	return 0;
 }
