@@ -30,7 +30,6 @@ struct Matice* soucet(struct Matice* matA, struct Matice* matB) {
 	return mat;
 }
 
-
 // Vrací matici, která je rozdílem zadaných matic
 struct Matice* rozdil(struct Matice* matA, struct Matice* matB) {
 	if (shodnostRozmeru(matA, matB) == 0) return NULL;
