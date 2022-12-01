@@ -3,7 +3,6 @@
 
 #include "MaticovaKalkulacka.h"
 #include "input.h"
-#include "operations.h"
 
 typedef struct Matice {
 	int sloupce, radky;
@@ -11,17 +10,51 @@ typedef struct Matice {
 } Matice;
 
 int main() {
-	Matice* matA = readMatrix();
-	Matice* matB = readMatrix();
-	Matice* mat = soucet(matA, matB);
+	char cmd;
 
-	printf("Matice:\n");
-	for (int i = 0; i < mat->sloupce * mat->radky; i++) {
-		printf("%.1lf ", mat->data[i]);
-	}
+	do {
+		system("cls");
 
-	free(matA);
-	free(matB);
-	free(mat);
+		printf("Q: Konec %c ", 186); 
+		printf("W: Soucet %c ", 186);
+		printf("E: Rozdil %c ", 186);
+		printf("R: Skalarni soucin %c ", 186);
+		printf("T: Vektorovy soucin\n");
+		printf("U: Determinant %c ", 186);
+		printf("I: Transpozice %c ", 186);
+		printf("O: Hodnost %c ", 186);
+		printf("P: Inverze\n\n");
+
+		cmd = tolower(getchar());
+		while (getchar() != '\n');
+
+		switch (cmd) {
+		case 'w':
+			onSoucet();
+			break;
+		case 'e':
+			onRozdil();
+			break;
+		case 'r':
+			onSkalar();
+			break;
+		case 't':
+			onSoucin();
+			break;
+		case 'u':
+			onDeterm();
+			break;
+		case 'i':
+			onTrans();
+			break;
+		case 'o':
+			onHodnost();
+			break;
+		case 'p':
+			onInverze();
+			break;
+		}
+	} while (cmd != 'q');
+
 	return 0;
 }
