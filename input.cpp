@@ -134,24 +134,99 @@ void onRozdil() {
 	free(mat);
 }
 
-// todo
+// Vykoná skalární souèin
 void onSkalar() {
+	Matice* matA = readMatrix();
 
+	system("cls");
+
+	double skalar = 0;
+	printf("Zadejte skalar, kterym chcete nasobit matici:\n");
+	scanf("%lf", &skalar);
+
+	Matice* mat = skalarniSoucin(matA, skalar);
+
+	system("cls");
+
+	printMatrix(matA);
+	printZnamenko(matA->sloupce, '*');
+	for (int i = 0; i < (matA->sloupce * 8) / 2; i++) printf(" ");
+	printf("%.2lf\n", skalar);
+	printZnamenko(matA->sloupce, '=');
+	printMatrix(mat, 1);
+
+	free(matA);
+	free(mat);
 }
 
-// todo
+// Vykoná maticový souèin
 void onSoucin() {
+	Matice* matA = readMatrix();
+	Matice* matB = readMatrix();
+	Matice* mat = soucin(matA, matB);
 
+	if (mat == NULL) {
+		system("cls");
+		printf("Pocet sloupcu matice A musi byt stejny jako pocet radku matice B, jinak nasobeni neni definovano.\n");
+
+		getchar();
+		getchar();
+		return;
+	}
+
+	system("cls");
+
+	printMatrix(matA);
+	printZnamenko(matA->sloupce, '*');
+	printMatrix(matB);
+	printZnamenko(matB->sloupce, '=');
+	printMatrix(mat, 1);
+
+	free(matA);
+	free(matB);
+	free(mat);
 }
 
-// todo
+// Spoèítá determiannt
 void onDeterm() {
+	Matice* mat = readMatrix();
+	double det = determinant(mat);
 
+	system("cls");
+
+	if (det == LONG_MAX) {
+		printf("Zadana matice musi mit tvar ctverce a nesmi mit rozmery vetsi nez 4.\n");
+
+		getchar();
+		getchar();
+		return;
+	}
+
+	printMatrix(mat);
+	printZnamenko(mat->sloupce, '=');
+
+	for (int i = 0; i < (mat->sloupce * 8) / 2; i++) printf(" ");
+	printf("%.2lf\n", det);
+
+	getchar();
+	getchar();
+
+	free(mat);
 }
 
-// todo
+// Vypíše transponovanou matici
 void onTrans() {
+	Matice* matA = readMatrix();
+	Matice* mat = transpozice(matA);
 
+	system("cls");
+
+	printMatrix(matA);
+	printZnamenko(matA->sloupce, 'T');
+	printMatrix(mat, 1);
+
+	free(matA);
+	free(mat);
 }
 
 // todo
@@ -161,5 +236,13 @@ void onHodnost() {
 
 // todo
 void onInverze() {
+	Matice* matA = readMatrix();
+	Matice* mat = inverze(matA);
 
+	system("cls");
+
+	printMatrix(mat, 1);
+
+	free(matA);
+	free(mat);
 }

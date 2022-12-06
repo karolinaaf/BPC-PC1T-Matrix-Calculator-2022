@@ -19,7 +19,7 @@ int main() {
 		printf("W: Soucet %c ", 186);
 		printf("E: Rozdil %c ", 186);
 		printf("R: Skalarni soucin %c ", 186);
-		printf("T: Vektorovy soucin\n");
+		printf("T: Maticovy soucin\n");
 		printf("U: Determinant %c ", 186);
 		printf("I: Transpozice %c ", 186);
 		printf("O: Hodnost %c ", 186);
