@@ -79,20 +79,29 @@ void printMatrix(struct Matice* mat, int historie = 0) {
 	}
 }
 
+void printZnamenko(int pocetSloupcu, char znamenko) {
+	for (int i = 0; i < (pocetSloupcu * 8) / 2; i++) printf(" ");
+	printf(" %c\n", znamenko);
+}
+
 // Vykoná souèet matic
 void onSoucet() {
 	Matice* matA = readMatrix();
 	Matice* matB = readMatrix();
 	Matice* mat = soucet(matA, matB);
 
+	if (mat == NULL) {
+		getchar();
+		getchar();
+		return;
+	}
+
 	system("cls");
 
 	printMatrix(matA);
-	for (int i = 0; i < (matA->sloupce * 8) / 2; i++) printf(" ");
-	printf(" +\n");
+	printZnamenko(matA->sloupce, '+');
 	printMatrix(matB);
-	for (int i = 0; i < (matA->sloupce * 8) / 2; i++) printf(" ");
-	printf(" =\n");
+	printZnamenko(matB->sloupce, '=');
 	printMatrix(mat, 1);
 
 	free(matA);
@@ -106,12 +115,18 @@ void onRozdil() {
 	Matice* matB = readMatrix();
 	Matice* mat = rozdil(matA, matB);
 
+	if (mat == NULL) {
+		getchar();
+		getchar();
+		return;
+	}
+
 	system("cls");
 
 	printMatrix(matA);
-	printf("\t-\n");
+	printZnamenko(matA->sloupce, '-');
 	printMatrix(matB);
-	printf("\t=\n");
+	printZnamenko(matB->sloupce, '=');
 	printMatrix(mat, 1);
 
 	free(matA);

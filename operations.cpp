@@ -9,6 +9,7 @@ typedef struct Matice {
 // Kontroluje, jestli mají zadané matice shodné rozmìry
 int shodnostRozmeru(struct Matice* matA, struct Matice* matB) {
 	if (matA->sloupce != matB->sloupce || matA->radky != matB->radky) {
+		system("cls");
 		printf("Zadane matice nemaji stejne rozmery.\n");
 		return 0;
 	}
