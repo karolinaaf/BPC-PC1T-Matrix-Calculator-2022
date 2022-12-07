@@ -72,7 +72,7 @@ struct Matice* soucin(struct Matice* matA, struct Matice* matB) {
 		for (int j = 0; j < matB->sloupce; j++) {
 			soucet = 0;
 			for (int k = 0; k < matA->sloupce; k++)
-				soucet += matA->data[ matA->sloupce* i + k] * matB->data[matB->sloupce * k + j];
+				soucet += matA->data[matA->sloupce * i + k] * matB->data[matB->sloupce * k + j];
 			mat->data[matB->sloupce * i + j] = soucet;
 		}
 	}

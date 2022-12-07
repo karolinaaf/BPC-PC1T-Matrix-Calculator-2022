@@ -84,10 +84,25 @@ void printZnamenko(int pocetSloupcu, char znamenko) {
 	printf(" %c\n", znamenko);
 }
 
+int kontrolaRozmeru(struct Matice* mat) {
+	if (mat->radky > 5 || mat->sloupce > 5) {
+		system("cls");
+		printf("Zadana matice nesmi byt vetsi nez 5x5!\n");
+		getchar();
+		getchar();
+		return 1;
+	}
+
+	return 0;
+}
+
 // Vykoná souèet matic
 void onSoucet() {
 	Matice* matA = readMatrix();
+	if (kontrolaRozmeru(matA)) return;
 	Matice* matB = readMatrix();
+	if (kontrolaRozmeru(matB)) return;
+
 	Matice* mat = soucet(matA, matB);
 
 	if (mat == NULL) {
@@ -112,7 +127,10 @@ void onSoucet() {
 // Vykoná rozdíl matic
 void onRozdil() {
 	Matice* matA = readMatrix();
+	if (kontrolaRozmeru(matA)) return;
 	Matice* matB = readMatrix();
+	if (kontrolaRozmeru(matB)) return;
+
 	Matice* mat = rozdil(matA, matB);
 
 	if (mat == NULL) {
@@ -137,6 +155,7 @@ void onRozdil() {
 // Vykoná skalární souèin
 void onSkalar() {
 	Matice* matA = readMatrix();
+	if (kontrolaRozmeru(matA)) return;
 
 	system("cls");
 
@@ -162,7 +181,10 @@ void onSkalar() {
 // Vykoná maticový souèin
 void onSoucin() {
 	Matice* matA = readMatrix();
+	if (kontrolaRozmeru(matA)) return;
 	Matice* matB = readMatrix();
+	if (kontrolaRozmeru(matB)) return;
+
 	Matice* mat = soucin(matA, matB);
 
 	if (mat == NULL) {
@@ -190,12 +212,13 @@ void onSoucin() {
 // Spoèítá determiannt
 void onDeterm() {
 	Matice* mat = readMatrix();
+
 	double det = determinant(mat);
 
 	system("cls");
 
 	if (det == LONG_MAX) {
-		printf("Zadana matice musi mit tvar ctverce a nesmi mit rozmery vetsi nez 4.\n");
+		printf("Zadana matice musi mit tvar ctverce a nesmi byt vetsi nez 4x4.\n");
 
 		getchar();
 		getchar();
@@ -217,6 +240,8 @@ void onDeterm() {
 // Vypíše transponovanou matici
 void onTrans() {
 	Matice* matA = readMatrix();
+	if (kontrolaRozmeru(matA)) return;
+
 	Matice* mat = transpozice(matA);
 
 	system("cls");
